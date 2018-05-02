@@ -5,10 +5,11 @@
  */
 package com.lydia;
 
+import java.util.ResourceBundle;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
 /**
@@ -22,9 +23,12 @@ public class MainApp extends Application {
         FXMLLoader loader = new FXMLLoader();
         loader.
                 setLocation(MainApp.class.
-                        getResource("/layout/HomeAdmin.fxml"));
-        BorderPane root = loader.load();
-        Scene scene = new Scene(root);
+                        getResource("/layout/pilihBahasa.fxml"));
+        loader.
+                setResources(ResourceBundle.
+                        getBundle("bundle/bundleBahasa"));
+        AnchorPane ap = loader.load();
+        Scene scene = new Scene(ap);
         primaryStage.setScene(scene);
         primaryStage.setTitle("Sistem Akademik Sederhana");
         primaryStage.show();

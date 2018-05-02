@@ -33,5 +33,22 @@
         <delete dir="${build.generated.dir}/jax-wsCache/MyWebService"/>
         <delete dir="${build.generated.sources.dir}/jax-ws/com/lydia/service"/>
     </target>
-    <target name="wsimport-client-generate" depends="wsimport-client-MyWebService"/>
+    <target name="wsimport-client-AcademicYearWebService" depends="wsimport-init">
+        <mkdir dir="${build.generated.dir}/jax-wsCache/AcademicYearWebService"/>
+        <property name="wsdl-AcademicYearWebService" location="xml-resources/web-service-references/AcademicYearWebService/wsdl/localhost_8080/WebSistemAkademikSederhana/AcademicYearWebService.wsdl"/>
+        <wsimport sourcedestdir="${build.generated.dir}/jax-wsCache/AcademicYearWebService" destdir="${build.generated.dir}/jax-wsCache/AcademicYearWebService" wsdl="${wsdl-AcademicYearWebService}" catalog="catalog.xml" encoding="${source.encoding}" extension="true" verbose="true" fork="false" wsdlLocation="http://localhost:8080/WebSistemAkademikSederhana/AcademicYearWebService?WSDL" xnocompile="true" xendorsed="true" package="com.lydia.service">
+            <depends file="${wsdl-AcademicYearWebService}"/>
+            <produces dir="${build.generated.dir}/jax-wsCache/AcademicYearWebService"/>
+        </wsimport>
+        <copy todir="${build.generated.sources.dir}/jax-ws">
+            <fileset dir="${build.generated.dir}/jax-wsCache/AcademicYearWebService">
+                <include name="**/*.java"/>
+            </fileset>
+        </copy>
+    </target>
+    <target name="wsimport-client-clean-AcademicYearWebService" depends="-init-project">
+        <delete dir="${build.generated.dir}/jax-wsCache/AcademicYearWebService"/>
+        <delete dir="${build.generated.sources.dir}/jax-ws/com/lydia/service"/>
+    </target>
+    <target name="wsimport-client-generate" depends="wsimport-client-MyWebService, wsimport-client-AcademicYearWebService"/>
 </project>

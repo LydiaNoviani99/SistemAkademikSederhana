@@ -1,0 +1,73 @@
+<?xml version='1.0' encoding='UTF-8'?><!-- Published by JAX-WS RI (http://jax-ws.java.net). RI's version is Metro/2.3.2-b608 (trunk-7979; 2015-01-21T12:50:19+0000) JAXWS-RI/2.2.11-b150120.1832 JAXWS-API/2.2.12 JAXB-RI/2.2.12-b141219.1637 JAXB-API/2.2.13-b141020.1521 svn-revision#unknown. --><xs:schema xmlns:tns="http://service.lydia.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema" version="1.0" targetNamespace="http://service.lydia.com/">
+
+<xs:element name="addAcademicYear" type="tns:addAcademicYear"/>
+
+<xs:element name="addAcademicYearResponse" type="tns:addAcademicYearResponse"/>
+
+<xs:element name="deleteAcademicYear" type="tns:deleteAcademicYear"/>
+
+<xs:element name="deleteAcademicYearResponse" type="tns:deleteAcademicYearResponse"/>
+
+<xs:element name="showAllAcademicYear" type="tns:showAllAcademicYear"/>
+
+<xs:element name="showAllAcademicYearResponse" type="tns:showAllAcademicYearResponse"/>
+
+<xs:element name="updateAcademicYear" type="tns:updateAcademicYear"/>
+
+<xs:element name="updateAcademicYearResponse" type="tns:updateAcademicYearResponse"/>
+
+<xs:complexType name="addAcademicYear">
+<xs:sequence>
+<xs:element name="id" type="xs:int"/>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="addAcademicYearResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateAcademicYear">
+<xs:sequence>
+<xs:element name="id" type="xs:int"/>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="updateAcademicYearResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteAcademicYear">
+<xs:sequence>
+<xs:element name="id" type="xs:int"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="deleteAcademicYearResponse">
+<xs:sequence>
+<xs:element name="return" type="xs:int" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="showAllAcademicYear">
+<xs:sequence/>
+</xs:complexType>
+
+<xs:complexType name="showAllAcademicYearResponse">
+<xs:sequence>
+<xs:element name="return" type="tns:academicYear" minOccurs="0" maxOccurs="unbounded"/>
+</xs:sequence>
+</xs:complexType>
+
+<xs:complexType name="academicYear">
+<xs:sequence>
+<xs:element name="id" type="xs:int"/>
+<xs:element name="name" type="xs:string" minOccurs="0"/>
+</xs:sequence>
+</xs:complexType>
+</xs:schema>

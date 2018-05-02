@@ -23,28 +23,88 @@
                <children>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <ImageView fx:id="btnDataDosen" fitHeight="110.0" fitWidth="350.0" onMouseClicked="#btnDataDosenOnClick" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../asset/datadosen.jpg" />
-                           </image>
-                        </ImageView>
+                        <GridPane prefHeight="120.0" prefWidth="456.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                              <RowConstraints maxHeight="127.0" minHeight="10.0" prefHeight="100.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="58.0" minHeight="0.0" prefHeight="18.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
+                                 <children>
+                                    <ImageView fitHeight="110.0" fitWidth="350.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../asset/datadosen.jpg" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="48.0" prefWidth="203.0" GridPane.rowIndex="1">
+                                 <children>
+                                    <Button fx:id="btnDataDosen" mnemonicParsing="false" onAction="#btnDataDosenOnAction" prefHeight="25.0" prefWidth="353.0" text="Button" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </GridPane>
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1">
                      <children>
-                        <ImageView fx:id="btnDataMhs" fitHeight="110.0" fitWidth="350.0" onMouseClicked="#btnDataMhsOnClick" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../asset/datamahasiswa.jpg" />
-                           </image>
-                        </ImageView>
+                        <GridPane prefHeight="121.0" prefWidth="528.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints maxHeight="114.0" minHeight="10.0" prefHeight="106.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="57.0" minHeight="10.0" prefHeight="21.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <ImageView fitHeight="110.0" fitWidth="350.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../asset/datamahasiswa.jpg" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
+                                 <children>
+                                    <Button fx:id="btnDataMhs" mnemonicParsing="false" onAction="#btnDataMhsOnAction" prefHeight="25.0" prefWidth="351.0" text="Button" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </GridPane>
                      </children></HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
                      <children>
-                        <ImageView fx:id="btnDataMataKuliah" fitHeight="110.0" fitWidth="350.0" onMouseClicked="#btnDataMataKuliahOnClick" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../asset/datamatakuliah.jpg" />
-                           </image>
-                        </ImageView>
+                        <GridPane prefHeight="84.0" prefWidth="385.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints maxHeight="114.0" minHeight="10.0" prefHeight="108.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="57.0" minHeight="10.0" prefHeight="19.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <ImageView fitHeight="110.0" fitWidth="350.0" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../asset/datamatakuliah.jpg" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
+                                 <children>
+                                    <Button fx:id="btnDataMataKuliah" mnemonicParsing="false" onAction="#btnDataMataKuliahOnAction" prefHeight="25.0" prefWidth="351.0" text="Button" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </GridPane>
                      </children></HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <children>

@@ -11,12 +11,12 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Scene;
-import javafx.scene.image.ImageView;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.control.Button;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -28,57 +28,70 @@ import javafx.stage.Stage;
  */
 public class HomeAdminController implements Initializable {
 
+    private ResourceBundle rb;
     @FXML
-    private ImageView btnDataMataKuliah;
+    private Button btnDataMataKuliah;
     @FXML
-    private ImageView btnDataDosen;
-    @FXML
-    private ImageView btnDataMhs;
+    private Button btnDataDosen;
     @FXML
     private BorderPane bpHomeAdmin;
+    @FXML
+    private Button btnDataMhs;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+
+        this.setComponentOutputText(rb);
+    }
+
+    private void setComponentOutputText(ResourceBundle rb) {
+
+        this.rb = rb;
+
+        btnDataDosen.setText(rb.getString("btnDosen"));
+        btnDataMhs.setText(rb.getString("btnMahasiswa"));
+        btnDataMataKuliah.setText(rb.getString("btnMataKuliah"));
+
     }
 
     @FXML
-    private void btnDataMataKuliahOnClick(MouseEvent event) {
-    }
-
-    @FXML
-    private void btnDataDosenOnClick(MouseEvent event) {
+    private void btnDataDosenOnAction(ActionEvent event) {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MainApp.class.getResource(
                     "/layout/AddDataDosen.fxml"));
+            loader.setResources(rb);
             BorderPane pane = loader.load();
+
             AddDataDosenController addDataDosenController = loader.
                     getController();
+
             Scene scene = new Scene(pane);
             Stage secondStage = new Stage();
             secondStage.setScene(scene);
-            secondStage.setTitle("Add Data Dosen");
+            secondStage.setTitle("Add Data Mahasiswa");
             secondStage.initOwner(bpHomeAdmin.getScene().getWindow());
             secondStage.initModality(Modality.WINDOW_MODAL);
 
 //        anchorPane.getScene().getWindow().hide();
             secondStage.show();
         } catch (IOException ex) {
-            Logger.getLogger(AddDataMahasiswaController.class.getName()).
+            Logger.getLogger(AddDataDosenController.class.getName()).
                     log(Level.SEVERE, null, ex);
         }
+
     }
 
     @FXML
-    private void btnDataMhsOnClick(MouseEvent event) {
+    private void btnDataMhsOnAction(ActionEvent event) {
         try {
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(MainApp.class.getResource(
                     "/layout/AddDataMahasiswa.fxml"));
+            loader.setResources(rb);
             BorderPane pane = loader.load();
             AddDataMahasiswaController addDataMahasiswaController = loader.
                     getController();
@@ -95,6 +108,11 @@ public class HomeAdminController implements Initializable {
             Logger.getLogger(AddDataMahasiswaController.class.getName()).
                     log(Level.SEVERE, null, ex);
         }
+
+    }
+
+    @FXML
+    private void btnDataMataKuliahOnAction(ActionEvent event) {
     }
 
 }

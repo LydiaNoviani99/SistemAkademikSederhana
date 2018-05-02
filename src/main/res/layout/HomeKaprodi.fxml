@@ -8,7 +8,7 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="512.0" prefWidth="775.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lydia.controller.HomeAdminController">
+<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="512.0" prefWidth="775.0" style="-fx-background-color: white;" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.lydia.controller.HomeKaprodiController">
    <bottom>
       <HBox prefHeight="28.0" prefWidth="775.0" style="-fx-background-color: cyan;" BorderPane.alignment="TOP_LEFT">
          <children>
@@ -23,11 +23,31 @@
                <children>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
                      <children>
-                        <ImageView fx:id="btnDataMataKuliah" fitHeight="110.0" fitWidth="350.0" onMouseClicked="#btnDataMataKuliahOnClick" pickOnBounds="true" preserveRatio="true">
-                           <image>
-                              <Image url="@../asset/datamatakuliah.jpg" />
-                           </image>
-                        </ImageView>
+                        <GridPane alignment="CENTER" prefHeight="205.0" prefWidth="470.0" HBox.hgrow="NEVER">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints maxHeight="95.0" minHeight="10.0" prefHeight="95.0" vgrow="SOMETIMES" />
+                            <RowConstraints maxHeight="58.0" minHeight="10.0" prefHeight="32.0" vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0">
+                                 <children>
+                                    <ImageView fitHeight="110.0" fitWidth="350.0" onMouseClicked="#btnDataMataKuliahOnClick" pickOnBounds="true" preserveRatio="true">
+                                       <image>
+                                          <Image url="@../asset/datamatakuliah.jpg" />
+                                       </image>
+                                    </ImageView>
+                                 </children>
+                              </HBox>
+                              <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.rowIndex="1">
+                                 <children>
+                                    <Button fx:id="btnMataKuliah" mnemonicParsing="false" onAction="#btnDataMataKuliahOnAction" prefHeight="25.0" prefWidth="340.0" text="Button" />
+                                 </children>
+                              </HBox>
+                           </children>
+                        </GridPane>
                      </children>
                   </HBox>
                   <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" GridPane.columnIndex="1" />

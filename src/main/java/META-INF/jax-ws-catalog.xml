@@ -2,4 +2,6 @@
 <catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
     <system systemId="http://localhost:8080/WebSistemAkademikSederhana/MyWebService?WSDL" uri="wsdl/localhost_8080/WebSistemAkademikSederhana/MyWebService.wsdl"/>
     <system systemId="http://localhost:8080/WebSistemAkademikSederhana/MyWebService?xsd=1" uri="wsdl/localhost_8080/WebSistemAkademikSederhana/MyWebService.xsd_1.xsd"/>
+    <system systemId="http://localhost:8080/WebSistemAkademikSederhana/AcademicYearWebService?WSDL" uri="wsdl/localhost_8080/WebSistemAkademikSederhana/AcademicYearWebService.wsdl"/>
+    <system systemId="http://localhost:8080/WebSistemAkademikSederhana/AcademicYearWebService?xsd=1" uri="wsdl/localhost_8080/WebSistemAkademikSederhana/AcademicYearWebService.xsd_1.xsd"/>
 </catalog>

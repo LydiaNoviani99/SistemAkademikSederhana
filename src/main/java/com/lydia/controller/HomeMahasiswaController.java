@@ -7,8 +7,10 @@ package com.lydia.controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 
@@ -19,6 +21,7 @@ import javafx.scene.input.MouseEvent;
  */
 public class HomeMahasiswaController implements Initializable {
 
+    private ResourceBundle rb;
     @FXML
     private ImageView btnProfilMhs;
     @FXML
@@ -27,13 +30,22 @@ public class HomeMahasiswaController implements Initializable {
     private ImageView btnDkbsMhs;
     @FXML
     private ImageView btnPerwalianMhs;
+    @FXML
+    private Button btnProfil;
+    @FXML
+    private Button btnJadwal;
+    @FXML
+    private Button btnDKBS;
+    @FXML
+    private Button btnPerwalian;
 
     /**
      * Initializes the controller class.
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
+
+        this.setComponentOutputText(rb);
     }
 
     @FXML
@@ -50,6 +62,32 @@ public class HomeMahasiswaController implements Initializable {
 
     @FXML
     private void btnPerwalianMhsOnClick(MouseEvent event) {
+    }
+
+    @FXML
+    private void btnProfilMhsOnAction(ActionEvent event) {
+    }
+
+    @FXML
+    private void btnJadwalOnAction(ActionEvent event) {
+    }
+
+    @FXML
+    private void btnDKBSOnAction(ActionEvent event) {
+    }
+
+    @FXML
+    private void btnPerwalianOnAction(ActionEvent event) {
+    }
+
+    private void setComponentOutputText(ResourceBundle rb) {
+
+        this.rb = rb;
+
+        btnProfil.setText(rb.getString("btnProfil"));
+        btnJadwal.setText(rb.getString("btnJadwal"));
+        btnDKBS.setText(rb.getString("btnDKBS"));
+        btnPerwalian.setText(rb.getString("btnPerwalian"));
     }
 
 }
